@@ -1,17 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const pulseAnimation = {
-  initial: { scale: 1 },
-  animate: {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-};
+import { constactSection } from "@/data/home";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -79,7 +68,7 @@ const CallToActionSection = () => {
           >
             <motion.div {...fadeInUp} whileHover={{ y: -3 }}>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="px-8 py-3 bg-[#0180e2] text-white font-medium rounded-full hover:bg-[#0169c2] transition-colors relative overflow-hidden group"
               >
                 <span className="relative z-10">Contact Me</span>
@@ -94,7 +83,7 @@ const CallToActionSection = () => {
 
             <motion.div {...fadeInUp} whileHover={{ y: -3 }}>
               <Link
-                href="https://github.com"
+                href={constactSection.gitHub}
                 target="_blank"
                 className="px-8 py-3 bg-transparent text-white font-medium rounded-full border border-[#0180e2] hover:bg-[#0180e2]/10 transition-colors flex items-center gap-2"
               >
@@ -116,7 +105,7 @@ const CallToActionSection = () => {
 
             <motion.div {...fadeInUp} whileHover={{ y: -3 }}>
               <Link
-                href="https://linkedin.com"
+                href={constactSection.linkedin}
                 target="_blank"
                 className="px-8 py-3 bg-transparent text-white font-medium rounded-full border border-[#0180e2] hover:bg-[#0180e2]/10 transition-colors flex items-center gap-2"
               >

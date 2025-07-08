@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { featuredProjects } from "@/data/home";
 
 const fadeInAnimation = {
   initial: { opacity: 0, y: 20 },
@@ -17,44 +18,6 @@ const staggerContainer = {
 };
 
 export const FeaturedProjects = () => {
-  const projects = [
-    {
-      title: "CRM Web App",
-      description:
-        "A multi-role CRM dashboard built from scratch with React and Node.js",
-      features: [
-        "User roles",
-        "Analytics dashboard",
-        "Secure authentication",
-        "Activity tracking",
-      ],
-      accentColor: "#0180e2",
-    },
-    {
-      title: "Portfolio Builder",
-      description:
-        "A customizable dynamic portfolio with backend control using Next.js",
-      features: [
-        "Admin panel",
-        "Drag-drop sections",
-        "Dark mode toggle",
-        "Custom animations",
-      ],
-      accentColor: "#0180e2",
-    },
-    {
-      title: "Medical Store (Rx)",
-      description: "Online pharmacy built using TypeScript and Redux",
-      features: [
-        "Product upload via Excel",
-        "Image previews",
-        "Category mapping",
-        "Inventory management",
-      ],
-      accentColor: "#0180e2",
-    },
-  ];
-
   return (
     <section className="relative overflow-hidden z-1 bg-[#010f1d] py-32">
       <div className="absolute -top-96 left-16 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-72 h-72 blur-[389px] opacity-20"></div>
@@ -79,7 +42,7 @@ export const FeaturedProjects = () => {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={index}
               variants={fadeInAnimation}
