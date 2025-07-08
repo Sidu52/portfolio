@@ -19,10 +19,10 @@ const ContactPage = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl text-center md:text-5xl font-bold mb-6">
-            Let's <span className="text-[#0180e2]">Connect</span>
+            Let&apos;s <span className="text-[#0180e2]">Connect</span>
           </h1>
           <p className="text-gray-400 text-center text-lg mb-8">
-            Have a project in mind or want to discuss opportunities? I'd love to
+            Have a project in mind or want to discuss opportunities? I&apos;d love to
             hear from you. Get in touch using the form or contact details below.
           </p>
           <div className="flex items-center justify-center gap-4">

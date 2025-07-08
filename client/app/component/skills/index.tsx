@@ -49,7 +49,7 @@ const SkillsSection = () => {
             Technical & Professional Skills
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A collection of technologies and methodologies I've mastered to
+            A collection of technologies and methodologies I&apos;ve mastered to
             deliver exceptional results.
           </p>
         </motion.div>

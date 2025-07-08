@@ -18,7 +18,7 @@ const ContactForm = () => {
         >
           <h2 className="text-3xl font-bold mb-2">Send Me a Message</h2>
           <p className="text-gray-400 mb-8">
-            Fill out the form below and I'll get back to you as soon as possible
+            Fill out the form below and I&apos;ll get back to you as soon as possible
           </p>
 
           <form className="space-y-6">
@@ -64,7 +64,7 @@ const ContactForm = () => {
                 type="text"
                 id="subject"
                 className="w-full px-4 py-3 bg-[#010f1d] border border-[#1E2D3D] rounded-lg focus:border-[#0180e2] focus:outline-none transition-colors"
-                placeholder="What's this about?"
+                placeholder="What&apos;s this about?"
               />
             </div>
 

@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaInstagram, FaBrain, FaPalette } from "react-icons/fa";
 import { interests } from "@/data/about";
 
 const InterestsSection = () => {

@@ -48,7 +48,7 @@ const Hero = () => {
             >
               <h1 className="text-5xl md:text-6xl font-bold leading-snug tracking-wide text-white">
                 Hi,
-                <br /> I'm
+                <br /> I&apos;m
                 <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#389be7] to-[#067ee1]">
                   {" "}
                   {heroSection.title}

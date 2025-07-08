@@ -1,6 +1,6 @@
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
-export const contactIntro = "Let's build something awesome together!";
+export const contactIntro = "Let&apos;s build something awesome together!";
 
 export const contactDetails = {
   resume:

@@ -42,7 +42,7 @@ const CallToActionSection = () => {
               >
                 <span className="w-2 h-2 rounded-full bg-[#0180e2]"></span>
               </motion.span>
-              Let's Collaborate
+              Let&apos;s Collaborate
             </span>
           </motion.div>
 
@@ -58,7 +58,7 @@ const CallToActionSection = () => {
             {...fadeInUp}
             className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto"
           >
-            Let's connect and bring your vision to life. I'm open to freelance,
+            Let&apos;s connect and bring your vision to life. I&apos;m open to freelance,
             full-time roles, and collaborations.
           </motion.p>
 

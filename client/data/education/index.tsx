@@ -58,7 +58,7 @@ export const certifications = [
 export const goals = [
   {
     year: "2019",
-    title: "Started Bachelor's",
+    title: "Started Bachelor&apos;s",
     description:
       "Began Bachelor Of Science in Computer Science at Jiwaji University",
     icon: "🎓",
