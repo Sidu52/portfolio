@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Http_Request } from "@/app/utils/helper";
+import Http_Request from "@/app/utils/http_client";
 
 type errorsTypes = {
   username?: string;
