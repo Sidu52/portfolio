@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import MainImage from "@/public/assets/images/about/about_us.jpg";
+import { aboutMe } from "@/data/about";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -38,25 +39,21 @@ const AboutMeSection = () => {
               {...fadeIn}
               className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6"
             >
-              Frontend Developer{" "}
-              <span className="text-[#0180e2]">Focused on Results</span>
+              {aboutMe.heading1}{" "}
+              <span className="text-[#0180e2]">{aboutMe.heading2}</span>
             </motion.h2>
 
             <motion.p {...fadeIn} className="text-lg text-gray-400 mb-6">
-              I'm a self-motivated frontend developer with 2.5 years of hands-on
-              experience in building production-ready web apps for startups.
+              {aboutMe.subHeading1}
             </motion.p>
 
             <motion.p {...fadeIn} className="text-lg text-gray-400 mb-8">
-              I specialize in developing seamless, fast, and responsive UIs
-              using React, Next.js, and Tailwind. Whether it's a dashboard, an
-              e-commerce platform, or a portfolio – I love crafting smooth user
-              experiences.
+              {aboutMe.subHeading2}
             </motion.p>
 
             <motion.div {...fadeIn}>
               <Link
-                href="/about"
+                href=""
                 className="inline-flex items-center px-6 py-3 bg-transparent text-white font-medium rounded-full border border-[#0180e2] hover:bg-[#0180e2]/10 transition-colors group"
               >
                 Read Full Story

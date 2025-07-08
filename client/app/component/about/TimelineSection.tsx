@@ -2,38 +2,9 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { timeline } from "@/data/about";
 
 const TimelineSection = () => {
-  const timelineData = [
-    {
-      year: "2019-2022",
-      title: "Completed B.Sc. Computer Science",
-      description: "Graduated with honors specializing in web technologies",
-      icon: "🎓",
-    },
-    {
-      year: "2022-2023",
-      title: "Full Stack Developer - Coding Ninjas Bootcamp",
-      description:
-        "Built 2 production apps with React, Node.js, and MongoDB stack",
-      icon: "💻",
-    },
-    {
-      year: "2023-2024",
-      title: "MERN Developer Intern - Gravit Infosystem Pvt. Ltd.",
-      description:
-        "Built 3 production apps with React, Next.js, Node.js and MongoDB stack",
-      icon: "💻",
-    },
-    {
-      year: "2024-Present",
-      title: "Full Stack Developer - Repill",
-      description: "Led development of 4 apps from scratch using Next.js",
-      icon: "🚀",
-    },
-    // You can add more items here and it will work automatically
-  ];
-
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -42,7 +13,7 @@ const TimelineSection = () => {
 
   // Dynamic animation values based on item count
   const getItemOpacity = (index: number) => {
-    const totalItems = timelineData.length;
+    const totalItems = timeline.length;
     const segment = 1 / totalItems;
     const start = index * segment;
     const end = (index + 1) * segment;
@@ -95,7 +66,7 @@ const TimelineSection = () => {
 
           {/* Timeline items */}
           <div className="space-y-24 pl-8 md:pl-0">
-            {timelineData.map((item, index) => {
+            {timeline.map((item, index) => {
               // Determine position (alternating for desktop)
               const positionClass =
                 index % 3 === 0
