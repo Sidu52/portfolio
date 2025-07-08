@@ -2,49 +2,9 @@
 
 import { motion } from "framer-motion";
 import { FiChevronDown, FiExternalLink } from "react-icons/fi";
+import { experiences } from "@/data/experience";
 
 const ExperiencePage = () => {
-  const experiences = [
-    {
-      id: 1,
-      role: "Full Stack Developer",
-      company: "Startup Pvt Ltd",
-      period: "Jan 2024 – Present",
-      current: true,
-      description:
-        "Led development of production-grade web applications handling both frontend and backend.",
-      responsibilities: [
-        "Built 4 web apps with React, Next.js, Node.js",
-        "Implemented role-based access control",
-        "Created reusable components with TailwindCSS",
-      ],
-      achievements: [
-        "Reduced load time by 40%",
-        "Migrated legacy projects to Next.js 14",
-      ],
-      techStack: ["Next.js", "React", "Node.js", "TailwindCSS"],
-    },
-    {
-      id: 2,
-      role: "Web Developer Intern",
-      company: "XYZ Tech",
-      period: "May 2023 to Dec 2023",
-      current: false,
-      description:
-        "Contributed to frontend development and learned modern web technologies.",
-      responsibilities: [
-        "Developed UI components with React",
-        "Assisted in building REST APIs",
-        "Fixed bugs across the codebase",
-      ],
-      achievements: [
-        "Optimized performance by 25%",
-        "Implemented automated testing",
-      ],
-      techStack: ["React", "JavaScript", "Node.js"],
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
