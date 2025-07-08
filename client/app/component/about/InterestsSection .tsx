@@ -1,29 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaInstagram, FaBrain, FaPalette } from "react-icons/fa";
+import { interests } from "@/data/about";
 
 const InterestsSection = () => {
-  const interests = [
-    {
-      icon: <FaInstagram className="text-2xl" />,
-      title: "AI-Generated Content",
-      description: "I create spiritual videos using AI tools on Instagram",
-      color: "bg-gradient-to-br from-pink-500 to-purple-600",
-    },
-    {
-      icon: <FaBrain className="text-2xl" />,
-      title: "Mind Exploration",
-      description: "Deeply interested in philosophy and psychology",
-      color: "bg-gradient-to-br from-blue-500 to-teal-400",
-    },
-    {
-      icon: <FaPalette className="text-2xl" />,
-      title: "Design Inspiration",
-      description: "Regularly browse Dribbble/Behance for UI/UX ideas",
-      color: "bg-gradient-to-br from-amber-500 to-red-500",
-    },
-  ];
-
   const cardVariants = {
     initial: { opacity: 0, y: 20 },
     animate: (i: number) => ({

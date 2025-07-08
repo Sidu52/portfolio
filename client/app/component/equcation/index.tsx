@@ -2,34 +2,9 @@
 
 import { motion } from "framer-motion";
 import { FiAward, FiBook, FiCalendar } from "react-icons/fi";
+import { educationData } from "@/data/education";
 
 const EducationPage = () => {
-  const educationData = [
-    {
-      degree: "B.Sc. Computer Science",
-      institution: "XYZ University, India",
-      period: "2019–2022",
-      grade: "Final Grade: 62%",
-      description: [
-        "Specialized in web technologies and software development",
-        "Completed coursework in data structures, algorithms, and database systems",
-        "Participated in university coding competitions",
-      ],
-    },
-
-    {
-      degree: "12th Grade",
-      institution: "XYZ University, India",
-      period: "2019–2022",
-      grade: "Final Grade: 62%",
-      description: [
-        "Specialized in web technologies and software development",
-        "Completed coursework in data structures, algorithms, and database systems",
-        "Participated in university coding competitions",
-      ],
-    },
-  ];
-
   return (
     <section className="relative py-44 bg-[#010f1d] overflow-hidden">
       {/* Background elements */}
@@ -90,7 +65,7 @@ const EducationPage = () => {
                     </div>
                   </div>
                   <div className="mt-3 px-1 py-2 bg-[#0180e2]/10 text-[#0180e2] inline-block rounded-md text-sm font-medium">
-                    {item.grade}
+                    {item.city}
                   </div>
                   <ul className="mt-4 space-y-2">
                     {item.description.map((point, i) => (

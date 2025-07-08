@@ -1,8 +1,7 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
-
+import Link from "next/link";
+import { contactDetails } from "@/data/contact";
 const ContactPage = () => {
   return (
     <section className="relative py-48 overflow-hidden">
@@ -30,9 +29,12 @@ const ContactPage = () => {
             <button className="px-6 py-3 bg-[#0180e2] rounded-lg font-medium hover:bg-[#0168b3] transition-colors">
               Send Message
             </button>
-            <button className="px-6 py-3 border border-[#1E2D3D] rounded-lg font-medium hover:border-[#0180e2] transition-colors">
+            <Link
+              href={contactDetails.resume}
+              className="px-6 py-3 border border-[#1E2D3D] rounded-lg font-medium hover:border-[#0180e2] transition-colors"
+            >
               Download CV
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

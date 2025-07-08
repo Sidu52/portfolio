@@ -1,36 +1,9 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { FiAward } from "react-icons/fi";
+import { certifications } from "@/data/education";
 
 const CertificationsSection = () => {
-  const certifications = [
-    {
-      title: "React Developer",
-      issuer: "Coding Ninjas",
-      year: "2022",
-      icon: "⚛️",
-    },
-    {
-      title: "Full Stack Developer",
-      issuer: "Coding Ninjas",
-      year: "2022",
-      icon: "💻",
-    },
-    {
-      title: "Java Developer",
-      issuer: "Coding Ninjas",
-      year: "2021",
-      icon: "☕",
-    },
-    {
-      title: "DSA Certificate",
-      issuer: "Coding Ninjas",
-      year: "2021",
-      icon: "🧠",
-    },
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,23 +11,6 @@ const CertificationsSection = () => {
       transition: {
         staggerChildren: 0.15,
       },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-    hover: {
-      y: -5,
-      boxShadow: "0 10px 20px rgba(1, 128, 226, 0.2)",
     },
   };
 
@@ -122,7 +78,9 @@ const CertificationsSection = () => {
                   <span className="text-[#0180e2] text-sm font-medium">
                     {cert.year}
                   </span>
-                  <motion.div
+                  <motion.a
+                    href={cert.link}
+                    target="_blank"
                     whileHover={{ scale: 1.1 }}
                     className="w-8 h-8 rounded-full bg-[#0180e2]/10 flex items-center justify-center text-[#0180e2]"
                   >
@@ -141,7 +99,7 @@ const CertificationsSection = () => {
                       <polyline points="15 3 21 3 21 9"></polyline>
                       <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
-                  </motion.div>
+                  </motion.a>
                 </div>
               </div>
             </motion.div>

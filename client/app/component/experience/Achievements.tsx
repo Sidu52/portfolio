@@ -2,38 +2,9 @@
 
 import { motion } from "framer-motion";
 import { FiAward } from "react-icons/fi";
+import { achievements } from "@/data/experience";
 
 const Achievements = () => {
-  const achievements = [
-    {
-      id: 1,
-      title: "Legacy App Migration",
-      description: "Migrated 3 legacy apps to modern Next.js stack",
-      impact: "Improved performance by 60% and reduced maintenance costs",
-      icon: "🔄",
-    },
-    {
-      id: 2,
-      title: "Performance Optimization",
-      description: "Reduced load time by 40% with optimization techniques",
-      impact: "Enhanced user experience and increased conversion rates",
-      icon: "⚡",
-    },
-    {
-      id: 3,
-      title: "CRM System Development",
-      description: "Built CRM with 4 access levels from scratch",
-      impact: "Streamlined internal processes for 50+ users",
-      icon: "💼",
-    },
-    {
-      id: 4,
-      title: "Component Library",
-      description: "Created reusable UI component library",
-      impact: "Reduced development time by 30% for new features",
-      icon: "🧩",
-    },
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },

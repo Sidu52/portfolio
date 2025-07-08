@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import MainImage from "@/public/assets/images/home/main_image.webp";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { bottomAnimation, topAnimation, zoomIn } from "@/app/utils/animations";
+import { heroSection } from "@/data/home";
 
 const Hero = () => {
   const [isBuying, setIsBuyingOpen] = useState(false);
@@ -50,16 +51,14 @@ const Hero = () => {
                 <br /> I'm
                 <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#389be7] to-[#067ee1]">
                   {" "}
-                  Siddhant Sharma
+                  {heroSection.title}
                 </span>
               </h1>
               <p className="text-[20px] font-bold leading-snug tracking-wide text-white">
-                🚀 Frontend Developer | React & Next.js Specialist
+                {heroSection.subtitle}
               </p>
               <p className="text-base font-light leading-[30px] tracking-wide text-[#ffffffc0] sm:max-w-[900px] mx-auto">
-                I build clean, responsive, and scalable web applications that
-                deliver great user experiences. Let's bring ideas to life with
-                modern technology and elegant design.
+                {heroSection.description}
               </p>
             </motion.div>
             <motion.div

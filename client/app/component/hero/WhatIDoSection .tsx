@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
-import MainImage from "@/public/assets/images/home/main_image.webp";
+import { whatIDo } from "@/data/home";
 
 const topAnimation = {
   initial: { opacity: 0, y: 20 },
@@ -55,65 +54,23 @@ export const WhatIDoSection = () => {
                 },
               }}
             >
-              <motion.div {...itemAnimation} className="flex gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-3 h-3 rounded-full bg-[#0180e2]"></div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium text-white">
-                    Scalable Web Applications
-                  </h3>
-                  <p className="text-gray-400 mt-1">
-                    Develop scalable and maintainable web apps using React &
-                    Next.js with focus on architecture and best practices.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div {...itemAnimation} className="flex gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-3 h-3 rounded-full bg-[#0180e2]"></div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium text-white">
-                    Performance & SEO
-                  </h3>
-                  <p className="text-gray-400 mt-1">
-                    Optimize for performance, search engine visibility, and
-                    accessibility to reach the widest audience.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div {...itemAnimation} className="flex gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-3 h-3 rounded-full bg-[#0180e2]"></div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium text-white">
-                    API Integration
-                  </h3>
-                  <p className="text-gray-400 mt-1">
-                    Integrate REST APIs and manage application state efficiently
-                    with Redux or Zustand.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div {...itemAnimation} className="flex gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="w-3 h-3 rounded-full bg-[#0180e2]"></div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium text-white">
-                    Modern UI Development
-                  </h3>
-                  <p className="text-gray-400 mt-1">
-                    Implement responsive interfaces using TailwindCSS and modern
-                    design systems for consistent user experiences.
-                  </p>
-                </div>
-              </motion.div>
+              {whatIDo.map((data, index) => (
+                <motion.div
+                  {...itemAnimation}
+                  className="flex gap-4"
+                  key={index}
+                >
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-3 h-3 rounded-full bg-[#0180e2]"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-medium text-white">
+                      {data.title}
+                    </h3>
+                    <p className="text-gray-400 mt-1">{data.des}</p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </div>

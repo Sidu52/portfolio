@@ -1,28 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
+import { contactMethods } from "@/data/contact";
 
  const ContactDetails = () => {
-  const contactMethods = [
-    {
-      icon: <FiMail className="text-2xl text-[#0180e2]" />,
-      title: "Email",
-      value: "contact@example.com",
-      link: "mailto:contact@example.com",
-    },
-    {
-      icon: <FiPhone className="text-2xl text-[#0180e2]" />,
-      title: "Phone",
-      value: "+1 (123) 456-7890",
-      link: "tel:+11234567890",
-    },
-    {
-      icon: <FiMapPin className="text-2xl text-[#0180e2]" />,
-      title: "Location",
-      value: "San Francisco, CA",
-      link: "https://maps.google.com",
-    },
-  ];
+
 
   return (
     <section className="py-20 bg-[#011627]">

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { goals } from "@/data/education";
 
 const Card3DTimeline = () => {
   const containerRef = useRef(null);
@@ -9,44 +10,6 @@ const Card3DTimeline = () => {
     target: containerRef,
     offset: ["start center", "end center"],
   });
-
-  const timelineData = [
-    {
-      year: "2019",
-      title: "Started Bachelor's",
-      description: "Began B.Sc. in Computer Science at XYZ University",
-      icon: "🎓",
-      color: "#3b82f6", // blue-500
-    },
-    {
-      year: "2020",
-      title: "First React Project",
-      description: "Built weather app with React and OpenWeather API",
-      icon: "⚛️",
-      color: "#8b5cf6", // violet-500
-    },
-    {
-      year: "2021",
-      title: "Freelance Work",
-      description: "Developed portfolio website for local artist",
-      icon: "💼",
-      color: "#ec4899", // pink-500
-    },
-    {
-      year: "2022",
-      title: "Degree Completed",
-      description: "Graduated with honors in Computer Science",
-      icon: "🏆",
-      color: "#f59e0b", // amber-500
-    },
-    {
-      year: "2023-2025",
-      title: "Full Stack Developer",
-      description: "Building production apps with Next.js and Node.js",
-      icon: "🚀",
-      color: "#10b981", // emerald-500
-    },
-  ];
 
   return (
     <section
@@ -80,7 +43,7 @@ const Card3DTimeline = () => {
               x: useTransform(scrollYProgress, [0, 1], ["50%", "0%"]),
             }}
           >
-            {timelineData.map((item, index) => {
+            {goals.map((item, index) => {
               const cardProgress = useTransform(
                 scrollYProgress,
                 [index * 0.2, (index + 1) * 0.2],
