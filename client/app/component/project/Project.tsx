@@ -7,73 +7,10 @@ import {
   FiBriefcase,
   FiUser,
 } from "react-icons/fi";
-
-type ProjectType = "company" | "personal";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  type: ProjectType;
-  tech: string[];
-  link?: string;
-  github?: string;
-  image: string;
-  role?: string;
-  metrics?: string[];
-}
+import { companyProjects, personalProjects, Project } from "@/data/projects";
+import Image from "next/image";
 
 const ProjectsPage = () => {
-  const companyProjects: Project[] = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "Built a full-featured online store with payment integration and admin dashboard",
-      type: "company",
-      tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-      link: "https://example-store.com",
-      image: "/projects/ecommerce.jpg",
-      role: "Lead Frontend Developer",
-      metrics: ["Increased conversion by 35%", "Reduced load time by 40%"],
-    },
-    {
-      id: 2,
-      title: "Health Tracker App",
-      description:
-        "Developed mobile-first application for fitness and nutrition tracking",
-      type: "company",
-      tech: ["React Native", "GraphQL", "AWS"],
-      link: "https://health-tracker-app.com",
-      image: "/projects/health.jpg",
-      role: "Full Stack Developer",
-      metrics: ["100K+ downloads", "4.8/5 App Store rating"],
-    },
-  ];
-
-  const personalProjects: Project[] = [
-    {
-      id: 3,
-      title: "Portfolio CMS",
-      description: "Custom content management system for artists and creatives",
-      type: "personal",
-      tech: ["React", "Firebase", "TailwindCSS"],
-      link: "https://portfolio-cms-demo.com",
-      github: "https://github.com/username/portfolio-cms",
-      image: "/projects/cms.jpg",
-    },
-    {
-      id: 4,
-      title: "AI Recipe Generator",
-      description:
-        "Machine learning app that suggests recipes based on ingredients",
-      type: "personal",
-      tech: ["Python", "TensorFlow", "Flask"],
-      github: "https://github.com/username/ai-recipes",
-      image: "/projects/ai.jpg",
-    },
-  ];
-
   return (
     <div className="bg-[#010f1d] text-white min-h-screen py-44">
       {/* Hero Section */}
@@ -134,6 +71,7 @@ const ProjectsPage = () => {
                 project={project}
                 index={index}
                 showRole={false}
+                features={project.features}
               />
             ))}
           </div>
@@ -147,12 +85,14 @@ interface ProjectCardProps {
   project: Project;
   index: number;
   showRole: boolean;
+  features?: string[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   index,
   showRole,
+  features,
 }) => {
   return (
     <motion.div
@@ -164,11 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{ y: -5 }}
     >
       <div className="relative h-48 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover"
-        />
+        <Image src={project.image || ""} alt="Project Image" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
           <span
             className={`px-3 py-1 rounded-full text-sm font-medium ${
@@ -197,6 +133,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <div key={i} className="flex items-start gap-2">
                 <span className="text-[#0180e2] mt-1">•</span>
                 <span className="text-sm text-gray-300">{metric}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Features */}
+        {project.features && (
+          <div className="mb-4 space-y-2">
+            {project.features.map((feathre, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-[#0180e2] mt-1">•</span>
+                <span className="text-sm text-gray-300">{feathre}</span>
               </div>
             ))}
           </div>
