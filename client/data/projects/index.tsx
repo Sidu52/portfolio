@@ -5,6 +5,7 @@ import ReconnectImage from "@/public/assets/images/project/reconnect_web.png";
 import AIAssistantImage from "@/public/assets/images/project/ai_assistant_web.png";
 import StickNinjasImage from "@/public/assets/images/project/stickNinjaGame.tsx.png";
 import SocialMediaImage from "@/public/assets/images/project/social_media_website.png";
+import GravitImage from "@/public/assets/images/project/gravitImage.png";
 
 import { StaticImageData } from "next/image";
 export interface Project {
@@ -103,7 +104,7 @@ export const companyProjects: Project[] = [
     type: "company",
     tech: ["React.js", "Redux", "TailwindCSS", "TypeScript"],
     link: "https://gravitinfosystems.com/",
-    image: ReconnectImage,
+    image: GravitImage,
     role: "Frontend Developer",
     metrics: [
       "Designed and developed all pages using reusable and modular React components",
