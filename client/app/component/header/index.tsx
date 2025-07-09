@@ -155,7 +155,7 @@ const Header: React.FC = () => {
                     key={index}
                     active={pathname}
                     item={item}
-                    handleNavigationClick={(value) => {
+                    handleNavigationClick={() => {
                       setNavbarOpen(false);
                     }}
                   />
