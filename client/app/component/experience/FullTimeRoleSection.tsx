@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { FiChevronDown, FiExternalLink } from "react-icons/fi";
 import { experiences } from "@/data/experience";
+import { contactDetails } from "@/data/contact";
+import Link from "next/link";
 
 const ExperiencePage = () => {
   const containerVariants = {
@@ -158,15 +160,15 @@ const ExperiencePage = () => {
           <p className="text-gray-400 mb-6">
             Want to see more details? Check out my full resume.
           </p>
-          <a
-            href="/resume.pdf"
+          <Link
+            href={contactDetails.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 rounded-lg bg-[#0180e2] text-white font-medium hover:bg-[#0168b3] transition-colors"
           >
             View Resume
             <FiExternalLink className="ml-2" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

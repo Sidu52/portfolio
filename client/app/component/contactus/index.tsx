@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { contactDetails } from "@/data/contact";
+
 const ContactPage = () => {
   return (
     <section className="relative py-48 overflow-hidden">
@@ -22,15 +23,20 @@ const ContactPage = () => {
             Let&apos;s <span className="text-[#0180e2]">Connect</span>
           </h1>
           <p className="text-gray-400 text-center text-lg mb-8">
-            Have a project in mind or want to discuss opportunities? I&apos;d love to
-            hear from you. Get in touch using the form or contact details below.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you. Get in touch using the form or contact
+            details below.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <button className="px-6 py-3 bg-[#0180e2] rounded-lg font-medium hover:bg-[#0168b3] transition-colors">
+            <Link
+              href={"#contact-form"}
+              className="px-6 py-3 bg-[#0180e2] rounded-lg font-medium hover:bg-[#0168b3] transition-colors"
+            >
               Send Message
-            </button>
+            </Link>
             <Link
               href={contactDetails.resume}
+              target="_blank"
               className="px-6 py-3 border border-[#1E2D3D] rounded-lg font-medium hover:border-[#0180e2] transition-colors"
             >
               Download CV

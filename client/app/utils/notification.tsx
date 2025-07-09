@@ -30,7 +30,7 @@ const NotificationPopUp: React.FC<NotificationProps> = ({
         type === NotificationType.NOTIFICATION_NORMAL
           ? "bg-[#0860C3]"
           : type === NotificationType.NOTIFICATION_SUCCESS
-          ? "bg-[#55D11A]"
+          ? "bg-[#031e38]"
           : "bg-[#d11a1a]"
       }`}
     >

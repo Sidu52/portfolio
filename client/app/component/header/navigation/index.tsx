@@ -26,8 +26,8 @@ const HeaderLink: React.FC<{
           onClick={() => handleNavigationClick(item.href)}
           className={` text-[#032245] ${
             item.href === active
-              ? "font-medium text-[20px]"
-              : "font-normal text-[18px]"
+              ? "font-medium text-[18px]"
+              : "font-normal text-[16px]"
           } leading-6 tracking-wide mb-0.5 transition-all ease-in-out duration-200`}
         >
           {item.name}
