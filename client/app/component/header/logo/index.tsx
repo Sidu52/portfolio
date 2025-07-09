@@ -9,7 +9,7 @@ const Logo: React.FC<{ image: StaticImageData }> = ({ image }) => {
         alt="logo"
         width={50}
         height={50}
-        style={{ width: "auto", height: "auto" }}
+       className="w-[60px] h-auto"
         quality={100}
       />
     </Link>
