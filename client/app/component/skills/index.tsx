@@ -26,14 +26,14 @@ const SkillsSection = () => {
   };
 
   return (
-    <section className="py-48 bg-gradient-to-b from-[#010f1d] to-[#011627] relative overflow-hidden h-screen flex items-center justify-center">
+    <section className=" bg-gradient-to-b from-[#010f1d] to-[#011627] relative overflow-hidden h-screen flex items-center justify-center">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
         <div className="absolute top-20 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="mx-auto py-48 px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

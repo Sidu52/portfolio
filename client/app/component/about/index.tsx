@@ -14,7 +14,7 @@ const fadeIn = {
 
 const AboutMeSection = () => {
   return (
-    <section className={`relative p-48 overflow-hidden z-1 bg-[#010f1d]`}>
+    <section className={`relative py-48 overflow-hidden z-1 bg-[#010f1d]`}>
       {/* Background elements */}
       <div className="absolute -top-32 left-1/4 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-64 h-64 blur-[300px] opacity-20"></div>
       <div className="absolute bottom-20 -right-20 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-72 h-72 blur-[350px] opacity-15"></div>
