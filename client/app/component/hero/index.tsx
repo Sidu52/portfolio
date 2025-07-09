@@ -91,24 +91,17 @@ const Hero = () => {
             ></motion.div>
           </div>
 
-          <motion.div
-            {...bottomAnimation}
-            className="flex items-center justify-center w-[50%] max-lg:hidden"
-          >
-            <div>
-              <div className="fixed right-0 bottom-0 z-10 w-full max-w-[680px] h-full flex items-end justify-end">
-                <div className="absolute bottom-0 right-5 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-64 h-64 blur-[189px] "></div>
-                <Image
-                  className="w-full max-w-[580px] z-10"
-                  src={MainImage}
-                  width={1200}
-                  height={1100}
-                  alt="mobile logo"
-                  loading="lazy"
-                />
-              </div>
+          <div className="flex items-center justify-center w-[50%] max-lg:hidden">
+            <div className="fixed right-0 bottom-0 z-20">
+              <div className="absolute bottom-0 right-5 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-64 h-64 blur-[189px] "></div>
+              <Image
+                className="w-full max-w-[580px] z-10 relative"
+                src={MainImage}
+                alt="mobile logo"
+                loading="lazy"
+              />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
