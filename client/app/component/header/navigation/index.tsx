@@ -46,13 +46,11 @@ const HeaderLink: React.FC<{
         className="xl:hidden hover:bg-gray-800 px-4 py-3 rounded-xl"
         onClick={() => handleNavigationClick(item.href)}
       >
-        <Link
-          href={item.href}
-          target={item.target}
+        <p
           className={`text-[16px] font-light leading-6 tracking-wide mb-0.5 transition-all ease-in-out duration-200 text-white`}
         >
           {item.name}
-        </Link>
+        </p>
         <span className="group-hover:w-full absolute w-0 h-0.5 bg-gradient-to-r from-[#00FF8F] to-[#00A1FF] bottom-0 transition-all ease-in-out duration-200"></span>
       </div>
     </>

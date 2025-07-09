@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Logo from "./logo/index";
+import { useRouter } from "next/navigation";
 import BlackLogo from "@/public/assets/logo.png";
 import WhiteLogo from "@/public/assets/logo.png";
 import { NavigationLinks } from "./navigation/HeaderLink";
@@ -14,6 +15,7 @@ import useScreenSize from "@/app/hooks/useScreenSize";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const { width } = useScreenSize();
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
   const [navbarTranslateY, setNavbarTranslateY] = useState<string>("0px");
@@ -103,6 +105,7 @@ const Header: React.FC = () => {
                     item={item}
                     handleNavigationClick={(value) => {
                       setNavbarOpen(false);
+                      router.push(item.href);
                     }}
                   />
                 ))}
