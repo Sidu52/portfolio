@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-
+import { useRouter } from "next/navigation";
 export type HeaderItem = {
   name: string;
   href: string;
@@ -11,8 +11,9 @@ const HeaderLink: React.FC<{
   key: number;
   active: string;
   item: HeaderItem;
-  handleNavigationClick: (value: string) => void;
+  handleNavigationClick: () => void;
 }> = ({ key, item, handleNavigationClick, active }) => {
+  const router = useRouter();
   return (
     <>
       {/* Web Navigation */}
@@ -23,7 +24,7 @@ const HeaderLink: React.FC<{
         <Link
           href={item.href}
           target={item.target}
-          onClick={() => handleNavigationClick(item.href)}
+          onClick={() => handleNavigationClick()}
           className={` text-[#032245] ${
             item.href === active
               ? "font-medium text-[18px]"
@@ -44,7 +45,10 @@ const HeaderLink: React.FC<{
       <div
         key={key}
         className="xl:hidden hover:bg-gray-800 px-4 py-3 rounded-xl"
-        onClick={() => handleNavigationClick(item.href)}
+        onClick={() => {
+          router.push(item.href);
+          handleNavigationClick();
+        }}
       >
         <p
           className={`text-[16px] font-light leading-6 tracking-wide mb-0.5 transition-all ease-in-out duration-200 text-white`}
