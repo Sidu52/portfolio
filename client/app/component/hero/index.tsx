@@ -62,7 +62,7 @@ const Hero = () => {
               <p className="text-base font-light leading-[30px] tracking-wide text-[#ffffffc0] sm:max-w-[900px] mx-auto max-lg:text-center">
                 {heroSection.description}
               </p>
-              <div className="flex gap-4 mt-8">
+              <div className="flex items-center max-lg:justify-center gap-4 mt-8">
                 <motion.button
                   onClick={() => router.push(heroSection.cta.contact)}
                   whileHover={{ scale: 1.05 }}
