@@ -7,8 +7,9 @@ export const heroSection = {
   description:
     "I’m a passionate and performance-driven Frontend Developer with strong experience building production-ready web and mobile applications. In my most recent role at Repill Pvt Ltd, I specialized in React.js, Next.js, TypeScript, and Tailwind CSS to create scalable, maintainable, and user-focused interfaces.",
   cta: {
-    resume: "/resume.pdf",
-    contact: "/contact",
+    resume:
+      "https://drive.google.com/drive/folders/15tL9LlhsKSaBF7wdssxFhJ42dB3Hy8bB",
+    contact: "/contact-us",
   },
 };
 

@@ -9,6 +9,7 @@ import {
 } from "react-icons/fi";
 import { companyProjects, personalProjects, Project } from "@/data/projects";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProjectsPage = () => {
   return (
@@ -163,24 +164,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         <div className="flex items-center gap-3 mt-auto">
           {project.link && (
-            <a
+            <Link
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 rounded-lg bg-[#0180e2] hover:bg-[#0168b3] transition-colors text-sm"
             >
               <FiExternalLink /> Live Demo
-            </a>
+            </Link>
           )}
           {project.github ? (
-            <a
+            <Link
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 rounded-lg border border-[#1E2D3D] hover:border-[#0180e2] transition-colors text-sm"
             >
               <FiGithub /> Code
-            </a>
+            </Link>
           ) : (
             <span className="flex items-center gap-1 px-4 py-2 rounded-lg border border-[#1E2D3D] text-gray-500 text-sm">
               <FiCode /> Private
