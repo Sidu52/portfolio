@@ -1,18 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "standalone",
-  reactStrictMode: false,
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-      },
-    ],
+    unoptimized: true,
   },
 };
 
