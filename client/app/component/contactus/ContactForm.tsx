@@ -1,10 +1,13 @@
 "use client";
 import { handleSendEmail } from "@/app/utils/email";
 import { NotificationType } from "@/app/utils/enum/notification_enum";
-import { handleNotification } from "@/app/utils/helper";
+import {
+  formFieldInfomation,
+  handleNotification,
+  trackClickButton,
+} from "@/app/utils/helper";
 import { motion } from "framer-motion";
-import { Trykker } from "next/font/google";
-import { useReducer, useState } from "react";
+import { useReducer, useState, useRef } from "react";
 import { FiSend } from "react-icons/fi";
 
 type FormFields = {
@@ -16,6 +19,7 @@ type FormFields = {
 
 const ContactForm = () => {
   const [api_process, setApiProcess] = useState<boolean>(false);
+  const timeOutRef = useRef<NodeJS.Timeout | null>(null);
   const initialErrorState = {
     name: "",
     email: "",
@@ -71,6 +75,7 @@ const ContactForm = () => {
   // Change Field Value
   const handleChange = (e: { target: { id: string; value: string } }) => {
     const { id, value } = e.target;
+    trackUserEvents(id, value);
     dispatch({ type: "UPDATE_FIELD", field: id, value });
 
     if (value.trim() !== "") {
@@ -124,6 +129,17 @@ const ContactForm = () => {
     } finally {
       setApiProcess(false);
     }
+  };
+
+  // Track User Information
+  const trackUserEvents = (type: string, value: string) => {
+    if (timeOutRef.current) {
+      clearTimeout(timeOutRef.current);
+    }
+    if (!value) return;
+    timeOutRef.current = setTimeout(() => {
+      formFieldInfomation(type, value);
+    }, 2000);
   };
 
   return (
@@ -228,6 +244,7 @@ const ContactForm = () => {
 
             <motion.button
               type="submit"
+              onClick={() => trackClickButton("Send Email")} // Track Click Event
               className="flex items-center gap-2 px-6 py-3 bg-[#0180e2] rounded-lg font-medium hover:bg-[#0168b3] transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

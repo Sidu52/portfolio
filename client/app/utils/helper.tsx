@@ -104,3 +104,20 @@ export const mixpanelTrackEvent = (visit_type: string, props: any) => {
       });
     });
 };
+
+export const trackClickButton = (value: string) => {
+  mixpanelTrackEvent(value, {
+    Page_Type: "Button Click",
+    "Web Page": "Portfolio Web",
+    ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+  });
+};
+
+// GET FORM INFORMATION
+export const formFieldInfomation = (type:string ,value: string) => {
+  mixpanelTrackEvent(`${type} = ${value}`, {
+    Page_Type: "Form Infomation",
+    "Web Page": "Portfolio Web",
+    ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+  });
+};

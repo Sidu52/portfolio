@@ -7,6 +7,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { topAnimation, zoomIn } from "@/app/utils/animations";
 import { heroSection } from "@/data/home";
 import { FiDownload } from "react-icons/fi";
+import { trackClickButton } from "@/app/utils/helper";
 
 const Hero = () => {
   const [isBuying, setIsBuyingOpen] = useState(false);
@@ -64,7 +65,10 @@ const Hero = () => {
               </p>
               <div className="flex items-center max-lg:justify-center gap-4 mt-8">
                 <motion.button
-                  onClick={() => router.push(heroSection.cta.contact)}
+                  onClick={() => {
+                    trackClickButton("Click Hire Me"); // Track Click Event
+                    router.push(heroSection.cta.contact);
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 bg-gradient-to-r from-[#0180e2] to-[#01a0f6] text-white rounded-lg font-medium shadow-lg hover:shadow-[#0180e2]/40 transition-all duration-300"
@@ -74,6 +78,8 @@ const Hero = () => {
 
                 <motion.a
                   href={heroSection.cta.resume}
+                  target="_blank"
+                  onClick={() => trackClickButton("View Resume")} // Track Click Event
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 border-2 border-[#0180e2] text-[#0180e2] rounded-lg font-medium hover:bg-[#0180e2]/10 transition-all duration-300"

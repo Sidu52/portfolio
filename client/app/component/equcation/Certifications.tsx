@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FiAward } from "react-icons/fi";
 import { certifications } from "@/data/education";
+import { trackClickButton } from "@/app/utils/helper";
 
 const CertificationsSection = () => {
   const containerVariants = {
@@ -79,6 +80,7 @@ const CertificationsSection = () => {
                     {cert.year}
                   </span>
                   <motion.a
+                   onClick={() => trackClickButton("Visit"+cert.title+"Certificate")} // Track Click Event
                     href={cert.link}
                     target="_blank"
                     whileHover={{ scale: 1.1 }}

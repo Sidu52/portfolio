@@ -11,7 +11,7 @@ const HeaderLink: React.FC<{
   key: number;
   active: string;
   item: HeaderItem;
-  handleNavigationClick: () => void;
+  handleNavigationClick: (page_name:string) => void;
 }> = ({ key, item, handleNavigationClick, active }) => {
   const router = useRouter();
   return (
@@ -24,7 +24,7 @@ const HeaderLink: React.FC<{
         <Link
           href={item.href}
           target={item.target}
-          onClick={() => handleNavigationClick()}
+          onClick={() => handleNavigationClick(item.href)}
           className={` text-[#032245] ${
             item.href === active
               ? "font-medium text-[18px]"
@@ -47,7 +47,7 @@ const HeaderLink: React.FC<{
         className="xl:hidden hover:bg-gray-800 px-4 py-3 rounded-xl"
         onClick={() => {
           router.push(item.href);
-          handleNavigationClick();
+          handleNavigationClick(item.href);
         }}
       >
         <p
