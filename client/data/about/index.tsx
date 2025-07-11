@@ -23,7 +23,7 @@ export const timeline = [
        icon: "💻",
      },
      {
-       year: "2023-2024",
+       year: "2022-2024",
        title: "MERN Developer Intern - Gravit Infosystem Pvt. Ltd.",
        description:
          "Built 3 production apps with React.js, Next.js, Node.js and MongoDB stack",

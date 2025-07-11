@@ -1,7 +1,7 @@
 export const experiences = [
   {
     id: 1,
-    role: "Full Stack Developer",
+    role: "Software Engineer",
     company: "Repill",
     period: "Mar 2024 – Present",
     current: true,
@@ -40,7 +40,7 @@ export const experiences = [
     id: 2,
     role: "MERN Stack Developer Intern",
     company: "Gravit Infosystem Pvt. Ltd.",
-    period: "Sep 2023 – Mar 2024",
+    period: "Sep 2022 – Mar 2024",
     current: false,
     description:
       "Contributed to full-stack development projects, focusing on frontend performance, backend integration, and feature implementation to support business goals.",

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import MainImage from "@/public/assets/images/home/main_image.webp";
 import { useEffect, useRef, useState, useCallback } from "react";
-import { bottomAnimation, topAnimation, zoomIn } from "@/app/utils/animations";
+import { topAnimation, zoomIn } from "@/app/utils/animations";
 import { heroSection } from "@/data/home";
 import { FiDownload } from "react-icons/fi";
 

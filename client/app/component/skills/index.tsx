@@ -26,7 +26,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section className=" bg-gradient-to-b from-[#010f1d] to-[#011627] relative flex items-center justify-center">
+    <section className=" bg-gradient-to-b from-[#010f1d] to-[#011627] relative  flex items-center justify-center">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
         <div className="absolute top-20 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
