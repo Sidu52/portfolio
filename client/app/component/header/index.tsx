@@ -11,6 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { topAnimation } from "@/app/utils/animations";
 import useScreenSize from "@/app/hooks/useScreenSize";
+import { mixpanelTrackEvent } from "@/app/utils/helper";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
@@ -73,6 +74,66 @@ const Header: React.FC = () => {
     }
   }, [navbarOpen, width]);
 
+  useEffect(() => {
+    handleNavigationClick(pathname);
+  }, []);
+
+  // Track Page Visit
+  const handleNavigationClick = (page_name: string) => {
+    setNavbarOpen(false);
+    switch (page_name) {
+      case "/":
+        mixpanelTrackEvent("Home", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio Web",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+      case "/about-us":
+        mixpanelTrackEvent("About Us", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+      case "/skills":
+        mixpanelTrackEvent("Skills", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+      case "/experience":
+        mixpanelTrackEvent("Experience", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+      case "/education":
+        mixpanelTrackEvent("Education", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+      case "/project":
+        mixpanelTrackEvent("Project", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+      case "/contact-us":
+        mixpanelTrackEvent("Contact Us", {
+          Page_Type: "Visit",
+          "Web Page": "Portfolio",
+          ENV: process.env.NEXT_PUBLIC_ENV_TYPE,
+        });
+        break;
+    }
+  };
+
   return (
     <>
       <div
@@ -101,9 +162,9 @@ const Header: React.FC = () => {
                     key={index}
                     active={pathname}
                     item={item}
-                    handleNavigationClick={() => {
-                      setNavbarOpen(false);
-                    }}
+                    handleNavigationClick={(page_name: string) =>
+                      handleNavigationClick(page_name)
+                    }
                   />
                 ))}
               </nav>
@@ -155,9 +216,9 @@ const Header: React.FC = () => {
                     key={index}
                     active={pathname}
                     item={item}
-                    handleNavigationClick={() => {
-                      setNavbarOpen(false);
-                    }}
+                    handleNavigationClick={(page_name: string) =>
+                      handleNavigationClick(page_name)
+                    }
                   />
                 ))}
               </nav>

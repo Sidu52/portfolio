@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { contactMethods } from "@/data/contact";
+import { trackClickButton } from "@/app/utils/helper";
 
  const ContactDetails = () => {
 
@@ -34,6 +35,7 @@ import { contactMethods } from "@/data/contact";
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
+               onClick={() => trackClickButton(`Visit ${method.title}`)} // Track Click Event
             >
               <div className="flex justify-center mb-4">{method.icon}</div>
               <h3 className="text-xl font-bold mb-2">{method.title}</h3>

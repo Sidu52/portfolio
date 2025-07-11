@@ -5,6 +5,7 @@ import { FiChevronDown, FiExternalLink } from "react-icons/fi";
 import { experiences } from "@/data/experience";
 import { contactDetails } from "@/data/contact";
 import Link from "next/link";
+import { trackClickButton } from "@/app/utils/helper";
 
 const ExperiencePage = () => {
   const containerVariants = {
@@ -161,6 +162,7 @@ const ExperiencePage = () => {
             Want to see more details? Check out my full resume.
           </p>
           <Link
+            onClick={() => trackClickButton("Visit Github")} // Track Click Event
             href={contactDetails.resume}
             target="_blank"
             rel="noopener noreferrer"

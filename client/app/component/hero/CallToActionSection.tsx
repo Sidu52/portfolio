@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { constactSection } from "@/data/home";
+import { trackClickButton } from "@/app/utils/helper";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -73,6 +74,7 @@ const CallToActionSection = () => {
               >
                 <span className="relative z-10">Contact Me</span>
                 <motion.span
+                 onClick={() => trackClickButton("Contact us Home")} // Track Click Event
                   className="absolute inset-0 bg-[#0169c2] rounded-full opacity-0 group-hover:opacity-100"
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1.2, opacity: 0 }}
@@ -81,7 +83,10 @@ const CallToActionSection = () => {
               </Link>
             </motion.div>
 
-            <motion.div {...fadeInUp} whileHover={{ y: -3 }}>
+            <motion.div {...fadeInUp} whileHover={{ y: -3 }}
+             onClick={() => trackClickButton("Visit Github")} // Track Click Event
+             >
+              
               <Link
                 href={constactSection.gitHub}
                 target="_blank"
@@ -103,7 +108,9 @@ const CallToActionSection = () => {
               </Link>
             </motion.div>
 
-            <motion.div {...fadeInUp} whileHover={{ y: -3 }}>
+            <motion.div {...fadeInUp} whileHover={{ y: -3 }}
+             onClick={() => trackClickButton("Visit Linkedin")} // Track Click Event
+             >
               <Link
                 href={constactSection.linkedin}
                 target="_blank"

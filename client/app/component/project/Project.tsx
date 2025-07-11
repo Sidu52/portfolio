@@ -10,6 +10,7 @@ import {
 import { companyProjects, personalProjects, Project } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
+import { trackClickButton } from "@/app/utils/helper";
 
 const ProjectsPage = () => {
   return (
@@ -167,6 +168,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <Link
               href={project.link}
               target="_blank"
+              onClick={() => trackClickButton("Visit Project Live Demo - "+ project.title)} // Track Click Event
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 rounded-lg bg-[#0180e2] hover:bg-[#0168b3] transition-colors text-sm"
             >
@@ -176,6 +178,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.github ? (
             <Link
               href={project.github}
+              onClick={() => trackClickButton("Visit Project Github - "+project.title)} // Track Click Event
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 rounded-lg border border-[#1E2D3D] hover:border-[#0180e2] transition-colors text-sm"
