@@ -40,7 +40,7 @@ export const experiences = [
     id: 2,
     role: "MERN Stack Developer Intern",
     company: "Gravit Infosystem Pvt. Ltd.",
-    period: "Sep 2022 – Mar 2024",
+    period: "May 2022 – Mar 2024",
     current: false,
     description:
       "Contributed to full-stack development projects, focusing on frontend performance, backend integration, and feature implementation to support business goals.",
@@ -90,34 +90,41 @@ export const experiences = [
   },
 ];
 
-
 export const achievements = [
   {
     id: 1,
     title: "Social Media Platform Launch",
-    description: "Developed and launched a full-stack social media platform with real-time messaging and Reels feature.",
-    impact: "Boosted user engagement by 30% and increased time spent on platform by 18%.",
+    description:
+      "Developed and launched a full-stack social media platform with real-time messaging and Reels feature.",
+    impact:
+      "Boosted user engagement by 30% and increased time spent on platform by 18%.",
     icon: "🚀",
   },
   {
     id: 2,
     title: "Performance Optimization",
-    description: "Refactored frontend components and optimized API calls to improve speed and responsiveness.",
-    impact: "Achieved a 45% increase in website traffic and reduced load times by 35%.",
+    description:
+      "Refactored frontend components and optimized API calls to improve speed and responsiveness.",
+    impact:
+      "Achieved a 45% increase in website traffic and reduced load times by 35%.",
     icon: "⚡",
   },
   {
     id: 3,
     title: "CRM System Development",
-    description: "Built an internal CRM system for managing leads, tasks, and customer interactions.",
-    impact: "Increased team productivity and reduced manual tracking efforts by 60%.",
+    description:
+      "Built an internal CRM system for managing leads, tasks, and customer interactions.",
+    impact:
+      "Increased team productivity and reduced manual tracking efforts by 60%.",
     icon: "💼",
   },
   {
     id: 4,
     title: "Real-Time Bid System",
-    description: "Implemented a freelancer job portal with live bidding functionality and PayPal API integration.",
-    impact: "Reduced manual bid handling by 70% and streamlined the bidding process.",
+    description:
+      "Implemented a freelancer job portal with live bidding functionality and PayPal API integration.",
+    impact:
+      "Reduced manual bid handling by 70% and streamlined the bidding process.",
     icon: "🧩",
   },
 ];
