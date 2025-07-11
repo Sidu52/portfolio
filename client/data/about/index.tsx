@@ -4,7 +4,7 @@ import { FaInstagram, FaBrain, FaPalette } from "react-icons/fa";
 export const aboutMe = {
   heading1: "Frontend Developer",
   heading2: " Focused on Results",
-  subHeading1: "I&apos;m a performance-driven Frontend Developer with hands-on experience building scalable and user-focused web and mobile apps using React.js, Next.js, TypeScript, and Tailwind CSS.",
+  subHeading1: "I'm a performance-driven Frontend Developer with hands-on experience building scalable and user-focused web and mobile apps using React.js, Next.js, TypeScript, and Tailwind CSS.",
   subHeading2: "I enjoy solving real-world problems through clean code and thoughtful UI/UX. I&apos;m also skilled in React Native, backend integration with Node.js, MongoDB, MySQL, and tools like Git, Postman, Vercel, Figma.",
 };
 
