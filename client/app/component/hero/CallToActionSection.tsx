@@ -63,7 +63,7 @@ const CallToActionSection = () => {
           </motion.p>
 
           <motion.div
-            className="flex items-center justify-center gap-4"
+            className="flex flex-wrap items-center justify-center gap-4"
             variants={staggerContainer}
           >
             <motion.div {...fadeInUp} whileHover={{ y: -3 }}>

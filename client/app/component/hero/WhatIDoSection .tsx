@@ -15,7 +15,7 @@ const itemAnimation = {
 
 export const WhatIDoSection = () => {
   return (
-    <section className="relative p-32 overflow-hidden z-1 bg-[#01152a]">
+    <section className="relative py-32 overflow-hidden z-1 bg-[#01152a]">
       {/* Background elements */}
       <div className="absolute -bottom-32 left-1/4 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-64 h-64 blur-[389px] opacity-20"></div>
       <div className="absolute top-1/3 -left-20 bg-[#0180e2] rounded-full rotate-[120deg] aspect-[1055/678] w-48 h-48 blur-[300px] opacity-15"></div>
