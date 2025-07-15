@@ -6,6 +6,7 @@ import AIAssistantImage from "@/public/assets/images/project/ai_assistant_web.pn
 import StickNinjasImage from "@/public/assets/images/project/stickNinjaGame.tsx.png";
 import SocialMediaImage from "@/public/assets/images/project/social_media_website.png";
 import GravitImage from "@/public/assets/images/project/gravitImage.png";
+import PortfolioImage from "@/public/assets/images/project/portfolio.png";
 
 import { StaticImageData } from "next/image";
 export interface Project {
@@ -38,7 +39,7 @@ export const companyProjects: Project[] = [
       "Web Services",
       "TypeScript",
     ],
-    link: "https://repill.com/",
+    link: "",
     image: RepillImage,
     role: "Lead Frontend Developer",
     metrics: [
@@ -61,7 +62,7 @@ export const companyProjects: Project[] = [
       "Web Services",
       "TypeScript",
     ],
-    link: "https://pharmacy.repill.com/",
+    link: "",
     image: PharmacyImage,
     role: "Frontend Developer",
     metrics: [
@@ -86,7 +87,7 @@ export const companyProjects: Project[] = [
       "Web Services",
       "TypeScript",
     ],
-    link: "https://reconnect.repill.com",
+    link: "",
     image: ReconnectImage,
     role: "Frontend Developer",
     metrics: [
@@ -117,6 +118,43 @@ export const companyProjects: Project[] = [
 
 export const personalProjects: Project[] = [
   {
+    id: 9,
+    title: "Portfolio",
+    description: `This is my personal portfolio website. It features a user event tracking system to monitor every interaction, a dynamic contact form with email integration.
+      And work on chatbot for engaging user experience, and an admin panel for real-time content control.`,
+    type: "personal",
+    tech: ["Next.js", "Redux", "TailwindCSS", "TypeScript", "Mixpanel"],
+    link: "https://siddhantsharmacv.netlify.app",
+    github: "https://github.com/Sidu52/portfolio",
+    image: PortfolioImage,
+    role: "Frontend Developer",
+    metrics: [
+      "Built the entire website using reusable, modular React components",
+      "Implemented responsive design using Tailwind CSS",
+      "Integrated Mixpanel to track user behavior on click, scroll, and form events",
+      "Added contact form with email sending capability using EmailJS or Nodemailer",
+      "Optimized performance and SEO for better Google indexing",
+    ],
+  },
+  {
+    id: 6,
+    title: "AI Voice Assistant",
+    description:
+      "Voice assistant that interprets user commands without using any paid AI APIs. It uses custom NPL logic to understand input and execute tasks like opening apps, replying, or fetching weather/news.",
+    type: "personal",
+    tech: ["Node.js", "Express", "JavaScript", "Socket.IO", "MongoDB", "NLP"],
+    link: "https://siddhantsharmavoiceassistant.netlify.app/",
+    github: "https://github.com/Sidu52/Vocie-Asstainer",
+    image: AIAssistantImage,
+    features: [
+      "Voice input processing using browser APIs",
+      "Custom NLP logic to understand and respond to user commands",
+      "Real-time interaction powered by Socket.IO",
+      "Speech synthesis for spoken replies using Web Speech API",
+      "Supports music playback, video suggestions, games, Q&A, astrology insights, and more",
+    ],
+  },
+  {
     id: 5,
     title: "Social Media Web App",
     description:
@@ -140,24 +178,6 @@ export const personalProjects: Project[] = [
       "User profile, follow/unfollow functionality",
       "Mobile responsive layout with dark mode",
       "60 Secound Reels watch and upload",
-    ],
-  },
-  {
-    id: 6,
-    title: "AI Voice Assistant",
-    description:
-      "Voice assistant that interprets user commands without using any paid AI APIs. It uses custom NPL logic to understand input and execute tasks like opening apps, replying, or fetching weather/news.",
-    type: "personal",
-    tech: ["Node.js", "Express", "JavaScript", "Socket.IO", "MongoDB", "NLP"],
-    link: "https://siddhantsharmavoiceassistant.netlify.app/",
-    github: "https://github.com/Sidu52/Vocie-Asstainer",
-    image: AIAssistantImage,
-    features: [
-      "Voice input processing using browser APIs",
-      "Custom NLP logic to understand and respond to user commands",
-      "Real-time interaction powered by Socket.IO",
-      "Speech synthesis for spoken replies using Web Speech API",
-      "Supports music playback, video suggestions, games, Q&A, astrology insights, and more",
     ],
   },
   {
