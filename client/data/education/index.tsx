@@ -1,6 +1,6 @@
 export const educationData = [
   {
-    degree: "B.Sc. Computer Science",
+    degree: "Bachelor of Science in Computer Science.",
     institution: "Jiwaji University",
     period: "2019–2022",
     city: "Gwalior",

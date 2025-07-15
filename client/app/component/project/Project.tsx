@@ -40,10 +40,15 @@ const ProjectsPage = () => {
       {/* Company Projects */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-8">
+          <motion.div
+            className="flex items-center gap-3 mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             <FiBriefcase className="text-2xl text-[#0180e2]" />
             <h2 className="text-3xl font-bold">Professional Work</h2>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {companyProjects.map((project, index) => (
@@ -168,7 +173,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <Link
               href={project.link}
               target="_blank"
-              onClick={() => trackClickButton("Visit Project Live Demo - "+ project.title)} // Track Click Event
+              onClick={() =>
+                trackClickButton("Visit Project Live Demo - " + project.title)
+              } // Track Click Event
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 rounded-lg bg-[#0180e2] hover:bg-[#0168b3] transition-colors text-sm"
             >
@@ -178,7 +185,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {project.github ? (
             <Link
               href={project.github}
-              onClick={() => trackClickButton("Visit Project Github - "+project.title)} // Track Click Event
+              onClick={() =>
+                trackClickButton("Visit Project Github - " + project.title)
+              } // Track Click Event
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 rounded-lg border border-[#1E2D3D] hover:border-[#0180e2] transition-colors text-sm"

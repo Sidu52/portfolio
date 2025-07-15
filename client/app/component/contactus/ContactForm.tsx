@@ -19,7 +19,9 @@ type FormFields = {
 
 const ContactForm = () => {
   const [api_process, setApiProcess] = useState<boolean>(false);
-  const timeOutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeOutRef = useRef<NodeJS.Timeout | null>(null); // timeout ref for debouncing fucntion
+  const [lastApiSubmitTime, setLastApiSubmitTime] = useState<number>(0); // lastApiSubmitTime capture for Throttle
+  const [maxApiCall, setMaxApiCall] = useState<number>(0);
   const initialErrorState = {
     name: "",
     email: "",
@@ -105,6 +107,10 @@ const ContactForm = () => {
     if (!isValid) return;
     if (api_process) return;
     setApiProcess(true);
+
+    // Prevent to call api continusly
+    if (!throttle({ delayApiCall: 120000, maxApiCall: 2 })) return;
+
     try {
       const response = await handleSendEmail(state);
       if (response.success) {
@@ -140,6 +146,21 @@ const ContactForm = () => {
     timeOutRef.current = setTimeout(() => {
       formFieldInfomation(type, value);
     }, 2000);
+  };
+
+  const throttle = ({
+    delayApiCall,
+    maxApiCall,
+  }: {
+    delayApiCall: number;
+    maxApiCall: number;
+  }) => {
+    const currentTime = Date.now();
+    if (lastApiSubmitTime - currentTime < delayApiCall) {
+      setLastApiSubmitTime(currentTime);
+      return false;
+    }
+    return true;
   };
 
   return (

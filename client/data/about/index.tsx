@@ -11,7 +11,7 @@ export const aboutMe = {
 export const timeline = [
   {
        year: "2019-2022",
-       title: "Completed B.Sc. Computer Science",
+       title: "Completed Bachelor of Science in Computer Science.",
        description: "Graduated with honors specializing in web technologies",
        icon: "🎓",
      },
@@ -23,7 +23,7 @@ export const timeline = [
        icon: "💻",
      },
      {
-       year: "2022-2024",
+       year: "2023-2024",
        title: "MERN Developer Intern - Gravit Infosystem Pvt. Ltd.",
        description:
          "Built 3 production apps with React.js, Next.js, Node.js and MongoDB stack",
