@@ -16,7 +16,7 @@ interface HttpRequestOptions {
   url: string;
   params?: Record<string, any>; // params is optional, can be an object
   data?: any; // data is optional, can be any type
-  headers?: AxiosRequestHeaders; // headers is optional, and Axios has a type for headers
+  headers?: any; // headers is optional, and Axios has a type for headers
 }
 
 const Http_Request = async ({
@@ -29,8 +29,7 @@ const Http_Request = async ({
   try {
     const options = { method, url, params, data, headers };
     const response = await axios.request(options);
-    const responseData: ApiResponse = response.data;
-    return responseData;
+    return response;
   } catch (error) {
     console.error("Error in HTTP request:", error);
     throw error;

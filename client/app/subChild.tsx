@@ -11,6 +11,7 @@ import {
   getClientSideCookie,
   hasCookie,
 } from "./utils/custom.cookies.client";
+import GeminiBot from "./component/GeminiBot";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
