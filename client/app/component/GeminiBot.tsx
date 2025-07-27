@@ -71,22 +71,37 @@ const GeminiBot = () => {
     setQuery("");
     setIsLoading(true);
 
+    const prompt = `
+    You are an intelligent assistant representing Siddhant Sharma in a conversation with a recruiter.
+
+    Your job is to respond politely, professionally, and confidently to any questions about Siddhant's skills, experience, background, and why he is a strong candidate.
+
+    Always answer as if you're his personal assistant who knows everything about him.
+
+    Candidate Profile: ${userProfile}
+    Recruiter's Question: ${query}
+  `;
+
     try {
-      const res = await axios.post("/api/gemini_ai", {
-        prompt: `
-        You are an intelligent assistant representing Siddhant Sharma in a conversation with a recruiter.
+      const responseData = await axios.post(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`,
+        {
+          contents: [{ parts: [{ text: prompt }] }],
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-        Your job is to respond politely, professionally, and confidently to any questions about Siddhant's skills, experience, background, and why he is a strong candidate.
-
-        Always answer as if you're his personal assistant who knows everything about him.
-
-        Candidate Profile:${userProfile} Recruiter's Question: ${query}
-  `,
-      });
+      const generatedText =
+        responseData?.data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        "No response from AI.";
 
       const botMessage: Message = {
         id: Date.now().toString(),
-        text: res.data.message,
+        text: generatedText,
         sender: "bot",
         timestamp: new Date(),
       };
