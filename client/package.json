@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.11.6",
     "axios": "^1.10.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.23.0",
